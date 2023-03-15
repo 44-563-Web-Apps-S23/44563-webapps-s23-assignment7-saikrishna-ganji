@@ -93,6 +93,23 @@
             container_div.insertBefore(remove_item, container_div.firstChild)
         }
     }
+
+    function promote() {
+        const queueItems = Array.from(document.getElementsByClassName("delayQ"));
+        const length = queueItems.length;
+        const random = Math.floor(Math.random() * length);
+        console.log(random);
+
+        const element = document.createElement("div");
+        element.innerHTML = queueItems[random].textContent;
+        element.style.color = "orange";
+        element.classList.add("delayQ");
+
+        const container = document.getElementById("target");
+        queueItems[random].remove();
+        container.insertBefore(element, queueItems[0]);
+    }
+
 </script>
 
 </html>
