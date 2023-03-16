@@ -95,7 +95,7 @@
     }
 
     function promote() {
-        const queueItems = Array.from(document.getElementsByClassName("delayQ"));
+        const queueItems = document.getElementsByClassName("delayQ");
         const length = queueItems.length;
         const random = Math.floor(Math.random() * length);
         console.log(random);
@@ -109,6 +109,7 @@
         queueItems[random].remove();
         container.insertBefore(element, queueItems[0]);
     }
+
 
 </script>
 
